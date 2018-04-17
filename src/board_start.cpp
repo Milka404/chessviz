@@ -8,9 +8,8 @@ void board_start(char desk[8][8]){
 		desk[1][j] = 'p';
 		desk[6][j] = 'p'-32;
 		for (int i = 2; i<6; ++i){
-			desk[i][j]= '  ';
+			desk[i][j]= ' ';
 			
 		}
 	}
 }
-
