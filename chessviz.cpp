@@ -1,18 +1,44 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
 
-int main()
-{
-    cout <<"8 r n b d k b n r" << "\n";
-    cout <<"7 p p p p p p p p" << "\n";
-    cout <<"6" << endl;
-    cout <<"5" << endl;
-    cout <<"4" << endl;
-    cout <<"3" << endl;
-    cout <<"2 P P P P P P P P" << "\n";
-    cout <<"1 R N B Q K B N R" << "\n";
-    cout <<"  a b c d e f g h" <<"\n";
+const char startPositions [8][8] = {
+                                    {'R','H','B','Q','K','B','H','R'},
+                                    {'P','P','P','P','P','P','P','P'},
+                                    {' ',' ',' ',' ',' ',' ',' ',' '},
+                                    {' ',' ',' ',' ',' ',' ',' ',' '},
+                                    {' ',' ',' ',' ',' ',' ',' ',' '},
+                                    {' ',' ',' ',' ',' ',' ',' ',' '},
+                                    {'p','p','p','p','p','p','p','p'},
+                                    {'r','h','b','q','k','b','h','r'},
+                                   };
 
-  return 0;
+const char horizString[] = {' ',' ','A',' ','B',' ','C',' ','D',' ','E',' ','F',' ','G',' ','H',' ',' ','\n'};
 
+void print(char array[8][8]){
+    for (int i = 0; i < 20; i++){
+        cout << horizString[i];
+    }
+
+    for (int i = 0; i < 8; i++){
+        cout<<  i + 1;
+        for (int j = 0; j < 8; j++){
+         cout << array[i][j];
+        }
+        cout<<"\n";
+    }
+    
+    cout << endl;
+}
+
+int main(int argc, char *argv[]){
+    char playzone [8][8];
+    for (int i = 0; i < 8; i++){
+        for (int j = 0; j < 8; j++){
+            playzone[i][j] = startPositions[i][j];
+        }
+    }
+    
+    cout << playzone;
+    return 0;
 }

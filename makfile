@@ -1,2 +1,2 @@
-all:
-gcc -Wall -o prog chessviz.pp
+chessviz: chessviz.cpp
+	g++ -Wall -o chessviz chessviz.cpp
